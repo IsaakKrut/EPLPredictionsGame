@@ -34,7 +34,6 @@ public class Utils {
         Properties prop = new Properties();
         
         if (input == null){
-            System.out.println("Properties file not found");
             throw new FileNotFoundException("Properties file not found");
         }
         prop.load(input);
