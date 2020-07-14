@@ -2,8 +2,9 @@
 This game is played by me and my friends and this project is designed to
 calculate the results and identify the winner.
  */
-package springmvcmaven.premierleaguepredictiongame;
+package premierleaguepredictiongame.java;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,8 +15,8 @@ import java.util.Scanner;
  */
 public class MirBet {
     
-    static String playersFile = "C:\\Users\\Isaak\\Documents\\NetBeansProjects\\mavenproject9\\src\\main\\java\\springmvcmaven\\premierleaguepredictiongame\\data\\players.txt";
-    static String tableFile = "C:\\Users\\Isaak\\Documents\\NetBeansProjects\\mavenproject9\\src\\main\\java\\springmvcmaven\\premierleaguepredictiongame\\data\\PremierLeagueTable.json";
+    static String playersFile = "src\\main\\java\\premierleaguepredictiongame\\data\\players.txt";
+    static String tableFile = "src\\main\\java\\premierleaguepredictiongame\\data\\PremierLeagueTable.json";
 
     /**
      * @param args the command line arguments
@@ -48,7 +49,7 @@ public class MirBet {
             players = Utils.getPlayers(playersFile);
             table = new Table(tableFile);
         }
-        catch(Exception e){
+        catch(FileNotFoundException e){
             System.out.println(e);
         }
         
