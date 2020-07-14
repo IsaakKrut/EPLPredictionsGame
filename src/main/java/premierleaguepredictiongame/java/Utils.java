@@ -9,8 +9,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -27,19 +29,27 @@ public class Utils {
     // and saves the response to a file to be read from later
     
     static void loadTable(String filename){
+        
+        try(InputStream input = Utils.class.getClassLoader().getResourceAsStream("properties\\config.properties")){
+        Properties prop = new Properties();
+        
+        if (input == null){
+            System.out.println("Properties file not found");
+            throw new FileNotFoundException("Properties file not found");
+        }
+        prop.load(input);
+        
         OkHttpClient client = new OkHttpClient();
+       
 
         Request request = new Request.Builder()
-                .url("https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague/table")
+                .url(prop.getProperty("url"))
                 .get()
-                .addHeader("x-rapidapi-host", "heisenbug-premier-league-live-scores-v1.p.rapidapi.com")
-                .addHeader("x-rapidapi-key", "70727e2265msh355a2ad6cc067fap12d830jsnff739d47a6ed")
+                .addHeader("x-rapidapi-host", prop.getProperty("x-rapidapi-host"))
+                .addHeader("x-rapidapi-key", prop.getProperty("x-rapidapi-key"))
                 .build();
         
-        Response response = null;
-
-        try{
-        response = client.newCall(request).execute();     
+        Response response = client.newCall(request).execute();     
         
         FileWriter file = new FileWriter(filename);
         //writing response from the API to a file
@@ -67,10 +77,7 @@ public class Utils {
             idCount++;
             String str = in.nextLine();
             String[] tokens = str.split(",");
-            if (tokens.length != 7){
-                continue;
-            }
-            else{
+            if (tokens.length == 7){
                 List<String> teams = new ArrayList<>();
                 for (int i = 1; i < 7; i++){
                 teams.add(tokens[i]);

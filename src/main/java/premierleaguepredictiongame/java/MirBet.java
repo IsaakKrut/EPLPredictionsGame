@@ -50,12 +50,14 @@ public class MirBet {
             table = new Table(tableFile);
         }
         catch(FileNotFoundException e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
         
         
         // Calculate the results and output them to standard output and a result file
-        Utils.printResults(players, table);
+        if (players != null && table!= null){
+            Utils.printResults(players, table);
+        }
         
     }
     
