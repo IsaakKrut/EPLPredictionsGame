@@ -1,0 +1,21 @@
+
+1,Liverpool,89
+2,Manchester City,66
+3,Manchester United,55
+4,Chelsea,57
+5,Leicester City,58
+6,Wolverhampton Wanderers,52
+7,Arsenal,49
+8,Sheffield United,48
+9,Burnley,46
+10,Tottenham Hotspur,45
+11,Everton,44
+12,Newcastle United,43
+13,Southampton,43
+14,Crystal Palace,42
+15,Brighton and Hove Albion,36
+16,West Ham United,31
+17,Watford,28
+18,Aston Villa,27
+19,Bournemouth,27
+20,Norwich City,21

@@ -1,0 +1,8 @@
+This game is based on predictions made before the beginning of 
+English Premier League Football season.
+
+1. Each player picks 6 teams in order and places them on position from 1 to 6, 
+based on the position the player expects them to be at after the last match of the season.
+2. For each team, a player receives points, based on the following formula :
+5 -|Xe - Xr|, where Xe is the position the player have chosen for that team and Xr is the position they actually finished in.
+3. The player with the most points wins. 

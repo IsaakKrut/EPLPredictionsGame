@@ -1,0 +1,3 @@
+Isaak,Manchester City,Liverpool,Tottenham Hotspur,Arsenal,Chelsea,Leicester City
+Bob,Manchester City,Liverpool,Tottenham Hotspur,Chelsea,Arsenal,Manchester United
+Max,Liverpool,Manchester City,Tottenham Hotspur,Manchester United,Arsenal,Chelsea
